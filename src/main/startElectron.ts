@@ -4,7 +4,8 @@ console.log('main process', __dirname);
 
 app.on('ready', () => {
   const mainWindow = new BrowserWindow();
-  const rendererUrl = 'file://' + __dirname + '/renderer/index.html';
+  const rendererUrl = 'http://localhost:32438/index.html';
   console.log('rendererUrl', rendererUrl);
   mainWindow.loadURL(rendererUrl);
+  mainWindow.webContents.openDevTools();
 });

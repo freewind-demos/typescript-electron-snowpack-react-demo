@@ -1,5 +1,11 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 export default function Hello() {
-  return <h1>Hello</h1>
+  const [seconds, setSeconds] = useState(0)
+  useEffect(() => {
+    setInterval(() => {
+      setSeconds(n => n + 1)
+    }, 1000)
+  }, [])
+  return <h1>Hello: {seconds}</h1>
 };
